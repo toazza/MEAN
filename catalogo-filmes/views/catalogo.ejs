@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html ng-app="catalogo">
+	<head>
+		<meta charset="UTF-8">
+    	<title>Bem-vindo</title>
+    	<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+
+		<!-- Optional theme -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+
+		<!-- Latest compiled and minified JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+	</head>
+
+	<body ng-controller='FilmesController'>
+		<section>
+			<header>
+				Hello <%= user.name %>!
+				<a href="/logout">Log out here!</a>
+			</header>
+			<nav>
+				<ul>
+					<li>menu 1</li>
+					<li>menu 2</li>
+					<li>menu 3</li>
+					<li>menu 4</li>
+					<li>menu 5</li>
+				</ul>
+			</nav>
+			
+			<h1>Bem vindo ao treinamento de MEAN Stack do Alura!</h1>
+			<ul>
+				<li ng-repeat="filme in filmes">
+					<a href="#" ng-click="mostraFilme(filme)">{{filme.titulo}}</a>
+				</li>
+			</ul>
+			<div ng-if="filmeSelecionado">
+				<dl>
+					<dd>Titulo</dd>
+					<dt>{{filmeSelecionado.titulo}}</dt>
+					<dd>Diretor</dd>
+					<dt>{{filmeSelecionado.diretor}}</dt>
+					<dd>Ano</dd>
+					<dt>{{filmeSelecionado.ano}}</dt>
+				</dl>
+
+				<a href="#" ng-click="deletaFilme(filmeSelecionado)">Deletar filme {{filmeSelecionado.titulo}}</a>
+				<a href="#" ng-click="editarFilme(filmeSelecionado)">Editar filme {{filmeSelecionado.titulo}}</a>
+			</div>
+
+			<form ng-submit="enviaFilme()">
+				Titulo: <input ng-model="filme.titulo">
+				Diretor:<input ng-model="filme.diretor">
+				Ano: <input ng-model="filme.ano">
+				<input type="submit">
+			</form>	
+		</section>
+		
+
+		<script src='/javascripts/angular.js'></script>
+		<script src="/javascripts/main.js"></script>
+		<script src='/javascripts/FilmesController.js'></script>
+	</body>
+</html>

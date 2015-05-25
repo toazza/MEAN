@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html >
+	<head>
+		<meta charset="UTF-8">
+    	<title>Bem-vindo</title>
+	</head>
+	<body>
+			<% if (!isAuthenticated) { %>
+				<a href="/login">Log in here</a>
+			<% } else { %>
+				
+			
+			<header>
+				Hello <%= user.name %>!
+				<a href="/logout">Log out here!</a>
+			</header>
+
+					
+					<a href="/catalogo">Catalogo</a>
+
+			<footer>
+				Florianópolis, SC - BRASIL
+			</footer>
+
+			<% } %>
+		
+ 	</body>
+</html>
