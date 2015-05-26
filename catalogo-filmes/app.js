@@ -22,7 +22,7 @@ app.use(expressSession({
 	saveUninitialized: false
 }));
 app.use(bodyParser.urlencoded({
-	extended: true
+	extended: true 
 }));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(passport.initialize());
