@@ -15,20 +15,7 @@
 
 	<body ng-controller='FilmesController'>
 		<section>
-			<header>
-				Hello <%= user.name %>!
-				<a href="/logout">Log out here!</a>
-			</header>
-			<nav>
-				<ul>
-					<li>menu 1</li>
-					<li>menu 2</li>
-					<li>menu 3</li>
-					<li>menu 4</li>
-					<li>menu 5</li>
-				</ul>
-			</nav>
-			
+			<%- include header.ejs %>
 			<h1>Bem vindo ao treinamento de MEAN Stack do Alura!</h1>
 			<ul>
 				<li ng-repeat="filme in filmes">
