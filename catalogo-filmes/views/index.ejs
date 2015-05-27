@@ -3,26 +3,29 @@
 	<head>
 		<meta charset="UTF-8">
     	<title>Bem-vindo</title>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+
 	</head>
 	<body>
-			<% if (!isAuthenticated) { %>
-				<a href="/login">Log in here</a>
-			<% } else { %>
-				
 			
-			<header>
-				Hello <%= user.name %>!
-				<a href="/logout">Log out here!</a>
-			</header>
+		<%- include header.ejs %>
+		<div id="container"></div>
+			
 
 					
-					<a href="/catalogo">Catalogo</a>
+					
 
-			<footer>
-				Florianópolis, SC - BRASIL
-			</footer>
-
-			<% } %>
+		
+		<%- include footer.ejs %>
+			
 		
  	</body>
 </html>

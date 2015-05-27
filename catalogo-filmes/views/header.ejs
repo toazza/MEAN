@@ -1,0 +1,9 @@
+<header>
+	<% if (!isAuthenticated) { %>
+		<%- include login.ejs %>
+	<% } else { %>
+		Hello <%= user.name %>!
+		<a href="/logout">Log out here!</a>
+		<a href="/catalogo">Catalogo</a>
+	<% } %>
+</header>

@@ -88,7 +88,7 @@ app.get('/', routes.index);
 app.get('/login', function(req, res) {
 	res.render('login');
 });
-app.post('/login', passport.authenticate('local'), function(req, res) {
+app.post('/', passport.authenticate('local'), function(req, res) {
 	res.redirect('/');
 })
 
