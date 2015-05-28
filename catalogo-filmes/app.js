@@ -90,7 +90,11 @@ app.get('/login', function(req, res) {
 });
 app.post('/', passport.authenticate('local'), function(req, res) {
 	res.redirect('/');
-})
+});
+
+app.post('/login', passport.authenticate('local'), function(req, res) {
+	res.redirect('/');
+});
 
 app.get('/lista', routes.lista);
 app.post('/grava', routes.grava);

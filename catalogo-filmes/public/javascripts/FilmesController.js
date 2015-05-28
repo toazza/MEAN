@@ -1,4 +1,4 @@
-angular.module('catalogo').controller(FilmesController = function($http, $scope) {
+angular.module('catalogo').controller('FilmesController', function($http, $scope) {
 	$http.get('/lista').success(function(retorno) {
 		$scope.filmes = retorno.filmes;
 	});
