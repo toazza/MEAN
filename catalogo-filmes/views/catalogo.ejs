@@ -10,8 +10,11 @@
 		
 	</head>
 
-	<body ng-controller='FilmesController'>
-		<section>
+	<body >
+
+	<%- include header.ejs %>
+
+		<section ng-controller='FilmesController'>
 			<h1>Bem vindo ao treinamento de MEAN Stack do Alura!</h1>
 			<ul>
 				<li ng-repeat="filme in filmes">

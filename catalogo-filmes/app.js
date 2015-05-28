@@ -64,6 +64,13 @@ app.get('/', function(req, res) {
 	});
 });
 
+app.get('/catalogo', function(req, res) {
+	res.render('catalogo', {
+		isAuthenticated: req.isAuthenticated(), 
+		user: req.user
+	});
+});
+
 app.get('/logout', function(req, res) {
 	req.logout();
 	res.redirect('/');
@@ -89,10 +96,6 @@ app.get('/login', function(req, res) {
 	res.render('login');
 });
 app.post('/', passport.authenticate('local'), function(req, res) {
-	res.redirect('/');
-});
-
-app.post('/login', passport.authenticate('local'), function(req, res) {
 	res.redirect('/');
 });
 
