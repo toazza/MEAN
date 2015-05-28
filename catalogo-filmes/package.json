@@ -13,10 +13,13 @@
     "ejs": "^2.3.1",
     "express": "^4.12.4",
     "express-session": "^1.11.2",
+    "grunt": "^0.4.5",
     "mongoose": "^4.0.3",
     "passport": "^0.2.2",
     "passport-http": "^0.2.2",
     "passport-local": "^1.0.0"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "grunt-contrib-concat": "^0.5.1"
+  }
 }
