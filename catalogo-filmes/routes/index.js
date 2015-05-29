@@ -1,4 +1,10 @@
 var Filme = require('../models/filme.js')
+var User = require('../models/user.js');
+
+exports.busca = function(req, res) {
+	//User.find
+};
+
 
 exports.index = function(req, res) {
 	res.render('index');

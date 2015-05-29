@@ -98,7 +98,7 @@ app.get('/login', function(req, res) {
 app.post('/', passport.authenticate('local'), function(req, res) {
 	res.redirect('/');
 });
-
+//app.busca('/busca', routes.busca);
 app.get('/lista', routes.lista);
 app.post('/grava', routes.grava);
 app.delete('/filme/:id', routes.deleta);
