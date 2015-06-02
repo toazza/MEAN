@@ -9,19 +9,10 @@ var _ = require('lodash'),
 /**
  * Load app configurations
  */
-
- //_.extend override these two required jsons
-/*module.exports = _.extend(
+module.exports = _.extend(
 	require('./env/all'),
 	require('./env/' + process.env.NODE_ENV) || {}
-);*/
-
-//_.extend merge these two required jsons
-	module.exports = _.merge(
-		require('./env/all'),
-		require('./env/' + process.env.NODE_ENV) || {}
-	);
-//console.log(module.exports);
+);
 
 /**
  * Get files by glob patterns
