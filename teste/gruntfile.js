@@ -139,11 +139,40 @@ module.exports = function(grunt) {
 			unit: {
 				configFile: 'karma.conf.js'
 			}
-		}
+		},
+		todo: {
+		    options: {
+		      marks: [
+		        {
+				  name: 'FIX',
+				  pattern: /FIXME/,
+				  color: 'red'
+				},
+				{
+				  name: 'TODO',
+				  pattern: /TODO/,
+				  color: 'yellow'
+				},
+				{
+				  name: 'NOTE',
+				  pattern: /NOTE/,
+				  color: 'blue'
+				}
+		      ],
+		      file: 'report.md',
+		      githubBoxes: true,
+		      colophon: true,
+		      usePackage: true
+		    },
+		    src: [
+		      '/app/controllers/users/*'
+		    ]
+		  }
 	});
 
 	// Load NPM tasks
 	require('load-grunt-tasks')(grunt);
+	grunt.loadNpmTasks('grunt-todo');
 
 	// Making grunt default to force in order not to break the project.
 	grunt.option('force', true);

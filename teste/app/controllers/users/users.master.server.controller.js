@@ -99,8 +99,6 @@ exports.userByID = function(req, res, next, id) {
  * User authorization middleware
  */
 exports.hasAuthorization = function(req, res, next) {
-
-
 	console.log(req.user.roles);
 	console.log( req.user.roles !== '[user]');
 	if ( req.user.roles === '[user]' ) {
@@ -110,3 +108,4 @@ exports.hasAuthorization = function(req, res, next) {
 	}
 	next();
 };
+

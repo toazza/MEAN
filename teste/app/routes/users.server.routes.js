@@ -24,9 +24,9 @@ module.exports = function(app) {
 	app.route('/auth/signin').post(users.signin);
 	app.route('/auth/signout').get(users.signout);
 
-	
-
-	app.route('/users').get(users.list).post(users.requiresLogin, users.create);
+	app.route('/users')
+	.get(users.requiresLogin, users.hasAuthorization, users.list)
+	.post(users.requiresLogin, users.hasAuthorization, users.create);
 
 	app.route('/users/:userId')
 	.get(users.read)

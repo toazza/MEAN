@@ -45,9 +45,8 @@ exports.signup = function(req, res) {
 		}
 	});
 };
-
 /**
- * Signin after passport authentication
+ * Signin after passport authentication /TODO/
  */
 exports.signin = function(req, res, next) {
 	passport.authenticate('local', function(err, user, info) {

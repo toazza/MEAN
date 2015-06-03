@@ -9,9 +9,11 @@ angular.module('users').controller('UsersController', ['$scope', '$http', '$stat
 
 		$scope.create = function() {
 			$http.post('/auth/signup', $scope.credentials).success(function(response) {
+				// If successful we assign the response to the global user model
+				//$scope.authentication.user = response;
 
 				// And redirect to the index page
-				$location.path('/');
+				$location.path('users');
 			}).error(function(response) {
 				$scope.error = response.message;
 			});
