@@ -1,8 +1,11 @@
 'use strict';
 
 // Setting up route
-angular.module('users').config(['$stateProvider',
-	function($stateProvider) {
+angular.module('users').config(['$stateProvider', '$urlRouterProvider',
+	function($stateProvider, $urlRouterProvider) {
+		
+		$urlRouterProvider.otherwise('/');
+
 		// Users state routing
 		$stateProvider.
 		state('profile', {

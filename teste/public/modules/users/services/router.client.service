@@ -1,0 +1,25 @@
+'use strict';
+
+angular.module('users').factory('User', function () {
+
+  var _this = this;
+
+  var adminRoles = ['admin', 'editor'];
+  var otherRoles = ['user'];
+
+  return {
+    // some code that gets and sets the user to the singleton variable...
+
+    _this._data = {
+      user: window.user
+    };
+
+    validateRoleAdmin: function () {
+      return _.contains(adminRoles, _this._data.role);
+    },
+
+    validateRoleOther: function () {
+      return _.contains(otherRoles, _this._data.role);
+    }
+  };
+});

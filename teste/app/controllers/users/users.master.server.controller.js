@@ -78,7 +78,7 @@ exports.list = function(req, res) {
 				message: errorHandler.getErrorMessage(err)
 			});
 		} else {
-			console.log('Estou aqui!!');
+
 			res.json(users);
 		}
 	});
@@ -101,7 +101,7 @@ exports.userByID = function(req, res, next, id) {
  */
 exports.hasAuthorization = function(req, res, next) {
 
-	if ( req.user.roles === '[user]' ) {
+	if ( req.user._doc.roles[0] ===  'user') {
 		return res.status(403).send({
 			message: 'User is not authorized'
 		});
