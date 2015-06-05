@@ -5,7 +5,7 @@ angular.module('core').service('Menus', [
 
 	function() {
 		// Define a set of default roles
-		this.defaultRoles = ['*'];
+		this.defaultRoles = ['*', 'master'];
 
 		// Define the menus object
 		this.menus = {};
@@ -17,11 +17,9 @@ angular.module('core').service('Menus', [
 					return true;
 				} else {
 					for (var userRoleIndex in user.roles) {
-						for (var roleIndex in this.roles) {
-							if (this.roles[roleIndex] === user.roles[userRoleIndex]) {
+							if (this.roles === user.roles[userRoleIndex]) {
 								return true;
 							}
-						}
 					}
 				}
 			} else {

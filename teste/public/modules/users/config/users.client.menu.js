@@ -4,7 +4,7 @@
 angular.module('users').run(['Menus',
 	function(Menus) {
 		// Set top bar menu items
-		Menus.addMenuItem('topbar', 'Users', 'users', 'dropdown', '/users(/create)?');
+		Menus.addMenuItem('topbar', 'Users', 'users', 'dropdown', '/users(/create)?', 'false', 'master', '0');
 		Menus.addSubMenuItem('topbar', 'users', 'Listar Usuarios', 'users');
 		Menus.addSubMenuItem('topbar', 'users', 'Novo Usuario', 'users/create');
 	}
