@@ -49,6 +49,34 @@ module.exports = function(grunt) {
 				}
 			}
 		},
+		todo: {
+		    options: {
+		      marks: [
+		        {
+				  name: 'FIX',
+				  pattern: /FIXME/,
+				  color: 'red'
+				},
+				{
+				  name: 'TODO',
+				  pattern: 'TODO',
+				  color: 'yellow'
+				},
+				{
+				  name: 'NOTE',
+				  pattern: /NOTE/,
+				  color: 'blue'
+				}
+		      ],
+		      file: 'report.md',
+		      githubBoxes: true,
+		      colophon: true,
+		      usePackage: true
+		    },
+		    src: [
+		      '/teste/app/controllers/users/**'
+		    ]
+		  },
 		jshint: {
 			all: {
 				src: watchFiles.clientJS.concat(watchFiles.serverJS),
@@ -139,35 +167,7 @@ module.exports = function(grunt) {
 			unit: {
 				configFile: 'karma.conf.js'
 			}
-		},
-		todo: {
-		    options: {
-		      marks: [
-		        {
-				  name: 'FIX',
-				  pattern: /FIXME/,
-				  color: 'red'
-				},
-				{
-				  name: 'TODO',
-				  pattern: /TODO/,
-				  color: 'yellow'
-				},
-				{
-				  name: 'NOTE',
-				  pattern: /NOTE/,
-				  color: 'blue'
-				}
-		      ],
-		      file: 'report.md',
-		      githubBoxes: true,
-		      colophon: true,
-		      usePackage: true
-		    },
-		    src: [
-		      '/app/controllers/users/*'
-		    ]
-		  }
+		}
 	});
 
 	// Load NPM tasks

@@ -78,6 +78,7 @@ exports.list = function(req, res) {
 				message: errorHandler.getErrorMessage(err)
 			});
 		} else {
+			console.log('Estou aqui!!');
 			res.json(users);
 		}
 	});
@@ -99,8 +100,7 @@ exports.userByID = function(req, res, next, id) {
  * User authorization middleware
  */
 exports.hasAuthorization = function(req, res, next) {
-	console.log(req.user.roles);
-	console.log( req.user.roles !== '[user]');
+
 	if ( req.user.roles === '[user]' ) {
 		return res.status(403).send({
 			message: 'User is not authorized'

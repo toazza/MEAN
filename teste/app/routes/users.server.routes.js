@@ -24,9 +24,12 @@ module.exports = function(app) {
 	app.route('/auth/signin').post(users.signin);
 	app.route('/auth/signout').get(users.signout);
 
+
+
+	//TODO: [restrict route access to master user]
 	app.route('/users')
 	.get(users.requiresLogin, users.hasAuthorization, users.list)
-	.post(users.requiresLogin, users.hasAuthorization, users.create);
+	.post(users.requiresLogin, users.hasAuthorization,  users.create);
 
 	app.route('/users/:userId')
 	.get(users.read)
