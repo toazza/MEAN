@@ -1,31 +1,28 @@
-angular.module('users').run(function ($rootScope, $scope, $location, Authentication, Users) {
+'use strict';
+
+angular.module('users').run(function ($rootScope, $location, Authentication, UserService, _) {
 
   // enumerate routes that don't need authentication
-  var routesThatDontRequireAuth = '/users';
-  var routesThatForAdmins = '/admin';
+  var routesThatDontRequireAuth = ['/'];
+  var routesThatForAdmins = ['/users'];
 
   // check if route does not require authentication
-  var routeClean = function(route) { 
-    if ( route == routesThatDontRequireAuth) {
-      return true;
-    } else return false;
-  }
+  var routeClean = function(route) {  
+    return _.contains(routesThatDontRequireAuth, route);
+  };
   // check if route requires admin priviledge
   var routeAdmin = function(route) { 
-     if ( route == routesThatForAdmins) {
-      return true;
-    } else return false;
-   }
+    return _.contains(routesThatForAdmins, route);
+  };
 
   $rootScope.$on('$stateChangeStart', function (ev, to, toParams, from, fromParams) {
-    
-    if (!routeClean($location.url()) && !$scope.user) {
+    if (!routeClean($location.url()) && !Authentication.user) {
       // redirect back to login
-      $location.path('/login');
+      $location.path('/');
     }
-    else if (routeAdmin($location.url()) && !User.validateRoleAdmin()) {
+    else if (routeAdmin($location.url()) && !UserService.validateRoleAdmin()) {
       // redirect to error page
-      $location.path('/error');
+      $location.path('/');
     }
   });
 });

@@ -2,9 +2,9 @@
 
 module.exports = {
 	app: {
-		title: 'Marvel',
-		description: 'App for heroes',
-		keywords: 'Heroes, App, Wolverine'
+		title: 'Portal BI',
+		description: 'BI Report App',
+		keywords: 'BI, Report, Softplan'
 	},
 	port: process.env.PORT || 3000,
 	templateEngine: 'swig',
@@ -25,7 +25,9 @@ module.exports = {
 				'public/lib/angular-sanitize/angular-sanitize.js', 
 				'public/lib/angular-ui-router/release/angular-ui-router.js',
 				'public/lib/angular-ui-utils/ui-utils.js',
-				'public/lib/angular-bootstrap/ui-bootstrap-tpls.js'
+				'public/lib/angular-bootstrap/ui-bootstrap-tpls.js',
+				'public/lib/underscore/underscore.js',
+				'public/lib/angular-underscore-module/angular-underscore-module.js'
 			]
 		},
 		css: [

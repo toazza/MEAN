@@ -26,7 +26,7 @@ module.exports = function(app) {
 
 
 
-	//TODO: [restrict route access to master user]
+	//Define routes that is only for master user
 	app.route('/users')
 	.get(users.requiresLogin, users.hasAuthorization, users.list)
 	.post(users.requiresLogin, users.hasAuthorization,  users.create);
